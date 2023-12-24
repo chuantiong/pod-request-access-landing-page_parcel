@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;700&display=swap');
+@import 'variables';
+@import 'reset';
+@import 'utilities';
+@import 'attribution';
+
+.container {
+    width: 100%;
+    min-width: 375px;
+    max-width: 1440px;
+    background-color: $clr-dark-navy;
+    padding: 0 1.5em 5.88em;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.host-image-mobile-wrapper {
+    background-color: $clr-dark-navy;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: .1;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: $clr-accent;
+        mix-blend-mode: multiply;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: .8;
+    }
+}
+
+.host-image-mobile {
+    width: 100%;
+    filter: saturate(0);
+    mix-blend-mode: screen;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.host-image-tablet {
+    display: none;
+}
+
+.host-image-desktop {
+    display: none;
+}
+
+.header {
+
+    &__logo-wrapper {
+        padding: 3.88rem 0 3.56rem;
+        
+        .header__logo {
+            width: 134.85px;
+            margin-inline: auto;
+        }
+    }
+}
+
+
+.main {
+    width: fit-content;
+    display: grid;
+    grid-template-areas: 
+        "intro"
+        "logos"
+        "input";
+}
+
+.intro {
+    grid-area: intro;
+    width: 100%;
+    text-align: center;
+    
+    &__title {
+        @include title-mobile;
+        color: $clr-white;
+        text-transform: uppercase;
+        margin-bottom: .615em;
+
+        .highlight-text {
+            color: $clr-accent;
+        }
+    }
+
+    &__description {
+        @include body-text-mobile;
+        color: $clr-light-gray;
+    }
+}
+
+.logos {
+    grid-area: logos;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.06em .37em 3em;
+
+    &__logo {
+        fill: $clr-medium-gray;
+    }
+
+    .spotify-logo {
+        width: 56px;
+    }
+
+    .apple-podcast-logo {
+        width: 45px;
+    }
+
+    .google-podcast-logo {
+        width: 73px;
+    }
+
+    .pocket-cast-logo {
+        width: 77px;
+    }
+}
+
+.email {
+    grid-area: input;
+    z-index: 100;
+
+    &__input-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .email__input {
+            @include input-btn;
+            @include btn-padding(2.2857em, 2.2857em);
+            background-color: $clr-dark-gray;
+            color: $clr-white;
+            margin-bottom: 1em;
+        }
+
+        .email__btn {
+            @include input-btn;
+            @include btn-padding(0, 0);
+            width: 100%;
+            background-color: $clr-accent;
+            transition: background-color .5s ease-in-out;
+
+            &:hover {
+                background-color: #B3FFE2;
+            }
+        }
+    }
+
+    &__error-text {
+        color: #FB3E3E;
+        font-size: $fs-12px;
+        font-weight: $fw-light;
+        margin-top: 0.666em;
+        margin-left: 2.666em;
+    }
+}
+
+.footer {
+
+    &__image {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 700px) {
+
+    .container {
+        padding: 0;
+        overflow: visible;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+
+        &__logo-wrapper {
+            padding: 3.12rem 0 0 2.44rem;
+            
+            .header__logo {
+                margin-inline: 0 auto;
+            }
+        }
+    }
+
+    .host-image-mobile-wrapper {
+        display: none;
+    }
+
+    .host-image-tablet {
+        display: block;
+    }
+
+    .main {
+        background-color: $clr-dark-navy;
+        position: absolute;
+        bottom: 50%;
+        left: 0;
+        transform: translate(2.44rem, 50%);
+        padding-top: 5.81rem;
+        display: grid;
+        grid-template-columns: 635px;
+        grid-template-areas:
+            "intro"
+            "input"
+            "logos";
+    }
+
+    .intro {
+        text-align: left;
+
+        &__title {
+            width: 95%;
+            @include title-tablet;
+            margin-bottom: .6458em;
+        }
+
+        &__description {
+            @include body-text-t-d;
+            width: 70%;
+        }
+    }
+
+    .logos {
+        justify-content: flex-start;
+        gap: 2.5rem;
+        margin: 0;
+
+        &__logo {
+            fill: $clr-medium-gray;
+        }
+
+        .spotify-logo {
+            width: 96px;
+        }
+
+        .apple-podcast-logo {
+            width: 78px;
+        }
+
+        .google-podcast-logo {
+            width: 125px;
+        }
+
+        .pocket-cast-logo {
+            width: 129px;
+        }
+    }
+
+    .email {
+        margin-block: 2.5rem 4rem;
+
+        &__input-wrapper {
+            width: fit-content;
+            flex-direction: row;
+            background-color: $clr-dark-gray;
+            border: 5px solid $clr-dark-gray;
+            border-radius: 100vw;
+
+            .email__input {
+                width: 255px;
+                background-color: none;
+                margin-bottom: 0;
+            }
+
+            .email__btn {
+                @include btn-padding(1.85em, 1.85em);
+            }
+        }
+    }
+
+    .footer {
+        width: 100%;
+        padding: 9.58rem 0 0 1.88rem;
+
+        &__image {
+            display: block;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    
+    .header {
+
+        &__logo-wrapper {
+            padding: 6.38rem 0 0 10.31rem;
+
+            .header__logo {
+                margin-inline: 0 auto;
+            }
+        }
+    }
+
+    .host-image-tablet {
+        display: none;
+    }
+
+    .host-image-desktop {
+        display: block;
+        margin-top: 8.13rem;
+    }
+
+    .main {
+        bottom: 0;
+        transform: translate(10.31rem, -8.13rem);
+        padding-top: 5.5rem;
+        grid-template-columns: 723px;
+    }
+
+    .intro {
+
+        &__title {
+            width: 95%;
+            @include title-desktop;
+            margin-bottom: .461em;
+        }
+
+        &__description {
+            @include body-text-t-d;
+            width: 63%;
+        }
+    }
+
+    .footer {
+        position: relative;
+        padding: 4.065rem 0 4.065rem 1.88rem;
+
+        &__image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    }
+}

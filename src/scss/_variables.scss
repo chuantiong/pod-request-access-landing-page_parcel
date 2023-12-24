@@ -1,0 +1,84 @@
+// colors
+$clr-accent: #54E6AF;
+$clr-medium-gray: #5A668A;
+$clr-dark-gray: #2C344B;
+$clr-light-gray: #C2CBE5;
+$clr-dark-navy: #121725;
+$clr-white: #ffffff;
+
+// font family
+$primary-ff: 'Chivo', sans-serif;
+
+// font weight
+$fw-light: 300;
+$fw-bold: 700;
+
+// font size
+$root-fs: 16px;
+$fs-1rem: $root-fs;
+$fs-12px: .75rem;
+$fs-14px: .875rem;
+$fs-15px: .9375rem;
+$fs-18px: 1.125rem;
+$fs-26px: 1.625rem;
+$fs-48px: 3rem;
+$fs-52px: 3.25rem;
+
+// line height
+$lh-25px: 1.5625rem;
+$lh-28px: 1.75rem;
+$lh-38px: 2.375rem;
+$lh-56px: 3.5rem;
+$lh-62px: 3.875rem;
+
+/* ====================
+        mixin
+==================== */
+
+@mixin title-mobile {
+    font-size: $fs-26px;
+    font-weight: $fw-light;
+    line-height: $lh-38px;
+}
+
+@mixin body-text-mobile {
+    font-size: $fs-15px;
+    font-weight: $fw-light;
+    line-height: $lh-25px;
+}
+
+// tablet
+
+@mixin title-tablet {
+    font-size: $fs-48px;
+    font-weight: $fw-light;
+    line-height: $lh-56px;
+}
+
+// Desktop
+
+@mixin title-desktop {
+    font-size: $fs-52px;
+    font-weight: $fw-light;
+    line-height: $lh-62px;
+}
+
+// Multiple
+
+@mixin body-text-t-d {
+    font-size: $fs-18px;
+    font-weight: $fw-light;
+    line-height: $lh-28px;
+}
+
+@mixin input-btn {
+    font-size: $fs-14px;
+    font-weight: $fw-bold;
+    line-height: $lh-28px;
+    border-radius: 100vw;
+}
+
+@mixin btn-padding($left, $right) {
+    padding-block: .642em;
+    padding-inline: $left $right;
+}

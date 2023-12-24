@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Frontend Mentor | Pod request access landing page</title>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../src/assets/favicon-32x32.png"
+		/>
+		<!-- CSS Stylesheet -->
+		<link rel="stylesheet" href="./scss/main.scss" />
+	</head>
+	<body>
+		<div class="container">
+			<header class="header">
+				<div class="header__logo-wrapper">
+					<img
+						class="header__logo"
+						src="../src/assets/desktop/logo.svg"
+						alt=""
+					/>
+				</div>
+				<img
+					class="host-image-tablet"
+					src="assets/tablet/image-host.jpg"
+					alt=""
+				/>
+				<img
+					class="host-image-desktop"
+					src="assets/desktop/image-host.jpg"
+					alt=""
+				/>
+			</header>
+			<main class="main">
+				<!-- Introduction -->
+				<section class="intro">
+					<h1 class="intro__title">
+						<span class="highlight-text">Publish your podcasts</span>
+						everywhere.
+					</h1>
+					<p class="intro__description">
+						Upload your audio to Pod with a single click. We’ll then distribute
+						your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket
+						Casts and more!
+					</p>
+				</section>
+				<!-- Logos -->
+				<div class="logos" id="logos">
+					<!-- SVG logos -->
+				</div>
+				<!-- Input -->
+				<form class="email" id="email-form">
+					<div class="email__input-wrapper">
+						<input
+							class="email__input"
+							id="email-input"
+							type="text"
+							placeholder="Email address"
+						/>
+						<button class="email__btn" type="submit">Request access</button>
+					</div>
+					<p class="email__error-text hide" id="error-text">
+						Oops! Please check your email
+					</p>
+				</form>
+			</main>
+			<div class="host-image-mobile-wrapper">
+				<img
+					class="host-image-mobile"
+					src="../src/assets/mobile/image-host.jpg"
+					alt=""
+				/>
+			</div>
+			<footer class="footer">
+				<img
+					class="footer__image"
+					src="../src/assets/desktop/bg-pattern-dots.svg"
+					alt=""
+				/>
+			</footer>
+		</div>
+
+		<!-- Attribution -->
+		<section class="attribution">
+			<p class="attribution__text">
+				Challenge by
+				<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+					>Frontend Mentor</a
+				>. Coded by <a href="https://github.com/chuantiong">Alvin Tiong</a>.
+			</p>
+		</section>
+		<script src="js/index.js"></script>
+	</body>
+</html>
